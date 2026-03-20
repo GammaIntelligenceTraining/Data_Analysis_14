@@ -1,23 +1,22 @@
 # https://www.w3schools.com/python/python_string_formatting.asp
 # Write a code to return "Hero" from given string
 example_string1 = "Hello bro"
-print(example_string1[0:2] + example_string1[-2:])
-print(example_string1.replace('llo b', ''))
+print(example_string1[0:2] + example_string1[7:9])
 
 
-# Write a code to return "ack is my name"
+# Write a code to return "Jack is my name"
 example_string2 = "jack Is My NAME"
 print(example_string2.capitalize())
 
+
 # Write a code to return "Get rid of junk please"
 example_string3 = "%-*Get rid of *junk* please*-L%*"
-example_string3 = example_string3.replace('*', '').strip('%-L')
+print(example_string3[3:27].replace('*', ''))
 
-print(example_string3)
 
 # Write a code to return "Hello my name is Jack"
 example_string4 = "hello my name is jack"
-print(example_string4.replace('jack', 'Jack'))
+print(example_string4.capitalize().replace('jack', 'Jack'))
 
 
 # Count all occurrences of “Estonia” in a given string ignoring the case.
@@ -29,8 +28,9 @@ print(example_string5.lower().count('estonia'))
 var1 = "jack"
 var2 = "hello"
 var3 = "MY NAME IS"
+formatted_string = f'{var2.capitalize()}, {var3.lower()} {var1.capitalize()}'
+print(formatted_string)
 
-print(f'{var2.title()}, {var3.lower()} {var1.title()}')
 
 # # Write a code to return byte_string text value (try utf-8 and utf-16)
 byte_string = b"\316\273"
