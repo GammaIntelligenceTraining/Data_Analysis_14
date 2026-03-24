@@ -4,17 +4,23 @@
 set_a = {1, 2, 3, 4}
 set_b = {3, 4, 5, 6}
 
+print(set_a.difference(set_b))
+print(set_b.difference(set_a))
+
+
 # Create a string from a list and save it to variable
 # Make each name on a new line.
 names = ['Jack', 'Mary', 'Samantha', 'George', 'Simon', 'John']
+names_string = '\n'.join(names)
 
-
+print(names_string)
 
 
 # print sum of all numbers in a list
 # print sum of all unique numbers in a list
 numbers = [2, 53, 12, 87, 65, 32, 12, 2, 65, 32]
-
+print(sum(numbers))
+print(sum(set(numbers)))
 
 
 
@@ -23,14 +29,21 @@ numbers = [2, 53, 12, 87, 65, 32, 12, 2, 65, 32]
 studentsA = ['Jack', 'Bob', 'Mary']
 studentsB = ['Bob', 'Sarah', 'Simon']
 
-
+students = list(set(studentsA + studentsB))
+print(students)
 
 # What elements are common for both tuples?
 numbersA = (23, 52, 12, 75, 42)
 numbersB = (75, 22, 42, 94, 70)
+print(set(numbersA).intersection(set(numbersB)))
+
 
 
 
 # add 5 to the tuple to a correct position
 a = (1, 2, 3, 4, 6, 7, 8)
-b = a[:4] + (5,) + a[4:]
+a = list(a)
+a.append(5)
+a.sort()
+a = tuple(a)
+print(a)
