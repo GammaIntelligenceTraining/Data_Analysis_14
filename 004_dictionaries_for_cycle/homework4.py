@@ -2,7 +2,16 @@
 # Iterate through names list and add names that are longer than 5 characters
 # to long_names, and others to short names
 names = ['Sarah', 'Jessica', 'Anthony', 'Jack', 'Simon', 'Arthur', 'Maria', 'Samantha']
+short_names, long_names = [], []
 
+for name in names:
+    if len(name) > 5:
+        long_names.append(name)
+    else:
+        short_names.append(name)
+
+print(short_names)
+print(long_names)
 
 # Given a list where each element is a year. Determine whether the given year is a leap year. 
 # If the year is a leap year,
@@ -11,8 +20,19 @@ names = ['Sarah', 'Jessica', 'Anthony', 'Jack', 'Simon', 'Arthur', 'Maria', 'Sam
 # but not a multiple of 100 OR if it is a multiple of 400.
 years_list = [2012, 2011, 1492, 1861, 1600, 1700, 1800, 1900, 2000]
 
+for year in years_list:
+    if year % 4 == 0 and year % 100 != 0 or year % 400 == 0:
+        print(year, 'is leap')
+    else:
+        print(year, 'is not leap')
+
 
 # Write a program that prompts the user for a string and checks if the string contains only unique characters.
+user_input = input('Enter something: ')
+if len(user_input) == len(set(user_input)):
+    print('All chars are unique')
+else:
+    print('There are duplicate chars')
 
 
 
@@ -25,6 +45,13 @@ people = [
     ('Maria', 'Gold', 29, 'female'),
     ('Simon', 'Bloom', 35, 'Male'),
 ]
+
+for name, surname, age, gender in people:
+    if gender.lower() == 'male':
+        pronoun = 'He'
+    elif gender.lower() == 'female':
+        pronoun = 'She'
+    print(f'This is {name} {surname}. {pronoun} is {age} years old.')
 
 # For each student print a message
 # Example:
@@ -58,4 +85,17 @@ students = [
             "History",
         ],
     },
+    {
+        "name": "Maria",
+        "surname": "Gold",
+    },
 ]
+
+for student in students:
+    print(f'Student name: {student.get('name')} {student.get('surname')}. ' \
+          f'Students courses: {', '.join(student.get('courses', []))}.')
+    
+
+
+x = {}
+print(x.get('name', []))
